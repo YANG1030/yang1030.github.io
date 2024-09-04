@@ -6,7 +6,7 @@ layout: home
 ---
 <hr />
 <div class="intro">
-    <img src="assets/me.jpg" alt="Portrait of Xuzhi" width="260" class="header_img" />
+    <img src="assets/me.jpg" alt="Portrait of Xuzhi" width="200" height = "300" class="header_img" />
     <strong style="font-size: 14pt;">PhD Student</strong><br />
     <div style="text-align: left; font-style: italic">
     Data Science Group;<br />

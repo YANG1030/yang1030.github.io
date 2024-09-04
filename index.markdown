@@ -7,7 +7,7 @@ layout: home
 <hr />
 <div class="intro" style="display: flex; align-items: flex-start; gap: 20px;">
     <div class="image-container" style="flex-shrink: 0;">
-        <img src="assets/me.jpg" alt="Portrait of Xuzhi" width="200" height = "280" class="header_img" />
+        <img src="assets/me.jpg" alt="Portrait of Xuzhi" width="260" height = "320" class="header_img" />
     </div>
     <div class="text-container">
         <strong style="font-size: 16pt;">PhD Student</strong><br />

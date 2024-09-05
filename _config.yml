@@ -34,7 +34,7 @@ plugins:
   - jekyll-feed
 
 theme_config:
-  appearance: "dark"
+  appearance: "light"
   back_home_text: ".." # customize text for homepage link in post layout
   date_format: "%Y-%m-%d" # customize how date is formatted
   show_description: false # show blog description in home page

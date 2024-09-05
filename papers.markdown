@@ -4,7 +4,7 @@ layout: page
 permalink: /research/papers
 ---
 
-Please find the full list of my papers below. You may sort by year or by research topic. 
+Please find the full list of my papers below.
 
 (* stands for equal contribution.)   
 

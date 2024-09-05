@@ -4,10 +4,8 @@
 
 layout: home
 ---
-<p style="text-align: right">
-<a href="/papers/">papers</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="/talks/">talks</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="/teaching/">teaching</a>
-</p>
-
+[home](/index.markdown)&nbsp;&nbsp;&nbsp;&nbsp;[papers](/papers/)&nbsp;&nbsp;&nbsp;&nbsp;[talks](/talks/)
+&nbsp;&nbsp;&nbsp;&nbsp;[teaching](/teaching/)
 
 <hr />
 <div class="intro" style="display: flex; align-items: flex-start; gap: 20px;">

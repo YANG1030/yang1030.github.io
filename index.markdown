@@ -4,6 +4,10 @@
 
 layout: home
 ---
+[papers](/papers/)
+[talks](/talks/)
+[teaching](/teaching/)
+
 <hr />
 <div class="intro" style="display: flex; align-items: flex-start; gap: 20px;">
     <div class="image-container" style="flex-shrink: 0;">

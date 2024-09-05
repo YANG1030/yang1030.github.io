@@ -1,7 +1,7 @@
 ---
 title: Presentations
 layout: page
-permalink: /research/talks
+permalink: /talks/
 ---
 
 Please find a list of talks and poster presentations I did. 

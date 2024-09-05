@@ -4,7 +4,7 @@
 
 layout: home
 ---
-[home](/index.markdown)&nbsp;&nbsp;&nbsp;&nbsp;[papers](/papers/)&nbsp;&nbsp;&nbsp;&nbsp;[talks](/talks/)
+[home](/index.markdown/)&nbsp;&nbsp;&nbsp;&nbsp;[papers](/papers/)&nbsp;&nbsp;&nbsp;&nbsp;[talks](/talks/)
 &nbsp;&nbsp;&nbsp;&nbsp;[teaching](/teaching/)
 
 <hr />

@@ -21,5 +21,5 @@ The following is a full list of my publications and working papers.
 
 ### **Working papers**
 
-<span style="color:#FF69B4">**A coefficient of correlation for implicit functional dependence**.</span> <br /> Xuzhi Yang and Tengyao Wang (2024+). *Working paper*
+<span style="color:	#FFC0CB">**A coefficient of correlation for implicit functional dependence**.</span> <br /> Xuzhi Yang and Tengyao Wang (2024+). *Working paper*
  <br /> 

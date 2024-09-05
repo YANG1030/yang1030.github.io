@@ -14,5 +14,4 @@ Please find the full list of my papers below. You may sort by year or by researc
 <span style="color:#FF69B4">**Multiple-output composite quantile regression through an optimal transport lens**.</span> <br /> Xuzhi Yang; Tengyao Wang; *COLT 2024*.
  <br /> [paper](/assets/papers/yang24.pdf)
 
-<span style="color:#FF69B4">**A framework for policy evaluation enhancement by diffusion models**.</span> <br /> Tao Ma*; Xuzhi Yang*; *The Second Tiny Papers Track at ICLR 2024*.
  <br /> [paper](/assets/papers/taotiny.pdf)

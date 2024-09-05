@@ -1,7 +1,7 @@
 ---
 title: Papers
 layout: page
-permalink: /research/papers
+permalink: /papers/
 ---
 
 The following is a full list of my publications and working papers.

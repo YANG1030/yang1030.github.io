@@ -4,9 +4,9 @@
 
 layout: home
 ---
-<div style="text-align: right">
+<p style="text-align: right">
 <a href="/papers/">papers</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="/talks/">talks</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="/teaching/">teaching</a>
-</div>
+</p>
 
 
 <hr />

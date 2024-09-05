@@ -5,16 +5,14 @@
 layout: home
 ---
 <div style="text-align: right">
-
-[papers](/papers/) &nbsp;&nbsp;&nbsp;&nbsp; [talks](/talks/) &nbsp;&nbsp;&nbsp;&nbsp; [teaching](/teaching/)
-
+<a href="/papers/">papers</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="/talks/">talks</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="/teaching/">teaching</a>
 </div>
 
 
 <hr />
 <div class="intro" style="display: flex; align-items: flex-start; gap: 20px;">
     <div class="image-container" style="flex-shrink: 0;">
-        <img src="assets/me.jpg" alt="Portrait of Xuzhi" width="260" height = "360" class="header_img" />
+        <img src="assets/me.jpg" alt="Portrait of Xuzhi" width="230" height = "330" class="header_img" />
     </div>
     <div class="text-container">
         <strong style="font-size: 16pt;">PhD Student</strong><br />

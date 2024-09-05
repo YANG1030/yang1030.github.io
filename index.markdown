@@ -2,11 +2,14 @@
 # Feel free to add content and custom Front Matter to this file.
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
-layout: home
+layout: page
 ---
-[papers](/papers/)
-[talks](/talks/)
-[teaching](/teaching/)
+<!--  <div style="text-align: right">
+
+[papers](/papers/) &nbsp;&nbsp;&nbsp;&nbsp; [talks](/talks/) &nbsp;&nbsp;&nbsp;&nbsp; [teaching](/teaching/)
+</div>
+
+--> 
 
 <hr />
 <div class="intro" style="display: flex; align-items: flex-start; gap: 20px;">
@@ -33,6 +36,8 @@ layout: home
         <a href="https://scholar.google.com/citations?user=XnH5giYAAAAJ&hl=en&oi=sra">Google Scholar</a>
         &bull;
         <a href="https://github.com/YANG1030">Github</a>
+        &bull;
+        <a href="/assets/cv.pdf">CV</a>
         </span>
     </div>
 </div>

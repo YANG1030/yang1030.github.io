@@ -2,14 +2,14 @@
 # Feel free to add content and custom Front Matter to this file.
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
-layout: page
+layout: home
 ---
-<!--  <div style="text-align: right">
+<div style="text-align: right">
 
 [papers](/papers/) &nbsp;&nbsp;&nbsp;&nbsp; [talks](/talks/) &nbsp;&nbsp;&nbsp;&nbsp; [teaching](/teaching/)
+
 </div>
 
---> 
 
 <hr />
 <div class="intro" style="display: flex; align-items: flex-start; gap: 20px;">

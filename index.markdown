@@ -27,16 +27,17 @@ layout: home
         I am fortunate to be supervised by <a  href = "https://personal.lse.ac.uk/wangt60">Tengyao Wang</a> and <a  href = "https://personal.lse.ac.uk/cheny100/">Yining Chen</a>.
         </p>
         <span>
-        <a href="https://www.linkedin.com/in/xuzhi-yang-9257871b1/">LinkedIn</a>
-        &bull;
         <a href="https://scholar.google.com/citations?user=XnH5giYAAAAJ&hl=en&oi=sra">Google Scholar</a>
         &bull;
         <a href="https://github.com/YANG1030">Github</a>
+        &bull;
+        <a href="https://dblp.org/pid/379/5665.html">DBLP</a>
         &bull;
         <a href="/assets/cv.pdf">CV</a>
         </span>
     </div>
 </div>
+
 
 ## What's new
 

@@ -41,6 +41,6 @@ layout: home
 
 ## What's new
 
-- **July, 2024** New preprint on offline RL when considering an optimal transport-based switching cost is available on arxiv. [paper](/assets/papers/SwichingCost.pdf)
+- **July, 2024** New preprint on offline RL when considering an optimal transport-based switching cost is available on arxiv. [paper](/assets/papers/SwichingCost.pdf) 
 - **June, 2024** I will give a poster session in the [Workshop on heterogeneous and distributed data](https://warwick.ac.uk/fac/sci/statistics/news/heterogeneous_distributed_data/) at Warwick. 
 - **May, 2024** Our paper on multiple-output composite quantile regression via optimal transport method is accepted by COLT 2024! [paper](/assets/papers/yang24.pdf) 

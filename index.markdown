@@ -21,7 +21,7 @@ layout: home
         x.yang64@lse.ac.uk
         </div>
         <p>
-        I am dedicated to exploring the elegant applications of <span style = "color:#FF69B4">optimal transport</span> theory in <i>non-parametric statistics</i>, <i>machine learning</i>, and <i>generative models</i>.
+        I am dedicated to exploring the elegant applications of <span style = "color:#FF69B4; font-weight: bold">optimal transport</span> theory in <i>non-parametric statistics</i>, <i>machine learning</i>, and <i>generative models</i>.
         </p>
         <p>
         I am fortunate to be supervised by <a  href = "https://personal.lse.ac.uk/wangt60">Tengyao Wang</a> and <a  href = "https://personal.lse.ac.uk/cheny100/">Yining Chen</a>.

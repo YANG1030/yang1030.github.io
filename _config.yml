@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Xuzhi Yang
+title: "XUZHI YANG 杨栩智"
 email: x.yang64@lse.ac.uk
 description: >- # this means to ignore newlines until "baseurl:"
   I am a PhD student at the London School of Economics and Political Science.

@@ -39,7 +39,6 @@ theme_config:
   date_format: "%Y-%m-%d" # customize how date is formatted
   show_description: false # show blog description in home page
 
-logo: /assets/logo.jpeg
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to

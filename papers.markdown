@@ -24,5 +24,5 @@ The following is a full list of my publications and working papers.
 
 ### **Working papers**
 
-<span style="color:	#FFB6C1">**A coefficient of correlation for implicit functional dependence**.</span> <br /> Xuzhi Yang, Mona Azadikia and Tengyao Wang (2024+). *Working paper*
+<span style="color:	#FFB6C1">**A coefficient of correlation for implicit functional dependence**.</span> <br /> Xuzhi Yang, Mona Azadkia and Tengyao Wang (2024+). *Working paper*
  <br /> 

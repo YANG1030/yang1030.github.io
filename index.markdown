@@ -21,7 +21,7 @@ layout: home
         x.yang64@lse.ac.uk
         </div>
         <p>
-        I am dedicated to exploring the elegant applications of <span style = "color:#FF69B4; font-weight: bold">optimal transport</span> theory in <i>non-parametric statistics</i>, <i>machine learning</i>, and <i>generative models</i>.
+        I am dedicated to developing <span style = "color:#FF69B4; font-weight: bold">robust method</span> for machine learning and non-parametric statistics. 
         </p>
         <p>
         I am fortunate to be supervised by <a  href = "https://personal.lse.ac.uk/wangt60">Tengyao Wang</a> and <a  href = "https://personal.lse.ac.uk/cheny100/">Yining Chen</a>.
@@ -41,7 +41,7 @@ layout: home
 
 ## What's new
 
-- **October, 2024** I am reviewing for ICLR 25 and AISTATS 25.
+- **October, 2024** I am reviewing for ICLR 2025 and AISTATS 2025.
 - **July, 2024** New preprint on offline RL when considering an optimal transport-based switching cost is available on arxiv. [paper](/assets/papers/SwichingCost.pdf) 
 - **June, 2024** I will give a poster session in the [Workshop on heterogeneous and distributed data](https://warwick.ac.uk/fac/sci/statistics/news/heterogeneous_distributed_data/) at Warwick. 
 - **May, 2024** Our paper on multiple-output composite quantile regression via optimal transport method is accepted by COLT 2024! [paper](/assets/papers/yang24.pdf) 

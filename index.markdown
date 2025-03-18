@@ -40,7 +40,8 @@ layout: home
 
 
 ## What's new
-
+- **May, 2025** I will give a poster session in the workshop [Uncertainty in multivariate, non-Euclidean, and functional spaces: theory and practice](https://www.newton.ac.uk/event/rclw01/) at Issac Newton Institute, Cambridge. 
+- **April, 2025** I will give a talk in the [LSE Statistics Research Showcase](https://www.lse.ac.uk/statistics/research/research-showcase-2025).
 - **October, 2024** I am reviewing for ICLR 2025 and AISTATS 2025.
 - **July, 2024** New preprint on offline RL when considering an optimal transport-based switching cost is available on arxiv. [paper](/assets/papers/SwichingCost.pdf) 
 - **June, 2024** I will give a poster session in the [Workshop on heterogeneous and distributed data](https://warwick.ac.uk/fac/sci/statistics/news/heterogeneous_distributed_data/) at Warwick. 

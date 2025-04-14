@@ -6,7 +6,7 @@ permalink: /talks/
 
 Please find a list of talks and poster presentations I did. 
 
-<span style = "font-weight: bold; color: #FF69B4">Talk</span> - Research Showcase Day, LSE, April, 2025.
+<span style = "font-weight: bold; color: #FF69B4">Talk</span> - Research Showcase Day, LSE, April, 2025. <br /> *Coverage correlation coefficient.* <br />
 
 <span style = "font-weight: bold; color: #FF69B4">Talk</span> - Data Science Society, LSE, March, 2025. <br /> *Multivariate rank via optimal assignment.* <br />
 

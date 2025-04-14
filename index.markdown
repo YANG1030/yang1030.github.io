@@ -21,7 +21,7 @@ layout: home
         x.yang64@lse.ac.uk
         </div>
         <p>
-        In general, I am intrigued by any methods elegently utilise the concept of  <span style = "color:#FF69B4; font-weight: bold">rank</span> and <span style = "color:#FF69B4; font-weight: bold"> qauntile </span>--especially in nonparametric statistics, robust statistics, uncertainty quantification.
+        In general, I am intrigued by any methods elegently utilise the concept of <span style = "color:#FF69B4; font-weight: bold">rank</span> and <span style = "color:#FF69B4; font-weight: bold">qauntile</span>--especially in nonparametric statistics, robust statistics and uncertainty quantification.
         </p>
         <p>
         I am fortunate to be supervised by <a  href = "https://personal.lse.ac.uk/wangt60">Tengyao Wang</a> and <a  href = "https://personal.lse.ac.uk/cheny100/">Yining Chen</a>.

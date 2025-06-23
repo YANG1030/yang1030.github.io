@@ -13,12 +13,12 @@ layout: home
         <img src="assets/me.jpg" alt="Portrait of Xuzhi" width="260" height = "385" class="header_img" />
     </div>
     <div class="text-container">
-        <strong style="font-size: 16pt;">PhD Student</strong><br />
+        <strong style="font-size: 16pt;">PhD in Statistics</strong><br />
         <div style="font-style: italic">
         Data Science Group;<br />
         Department of Statistics;<br />
         London School of Economics and Political Science; <br />
-        x.yang64@lse.ac.uk
+        yangxuzhi3@gmail.com
         </div>
         <p>
         In general, I am intrigued by any methods elegently utilise the concept of <span style = "color:#FF69B4; font-weight: bold">rank</span> and <span style = "color:#FF69B4; font-weight: bold">qauntile</span>--especially in nonparametric statistics, robust statistics and uncertainty quantification.
@@ -32,8 +32,6 @@ layout: home
         <a href="https://github.com/YANG1030">Github</a>
         &bull;
         <a href="https://dblp.org/pid/379/5665.html">DBLP</a>
-        &bull;
-        <a href="/assets/cv.pdf">CV</a>
         </span>
     </div>
 </div>

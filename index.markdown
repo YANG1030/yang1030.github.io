@@ -21,10 +21,10 @@ layout: home
         yangxuzhi3@gmail.com
         </div>
         <p>
-        In general, I am intrigued by any methods elegently utilise the concept of <span style = "color:#FF69B4; font-weight: bold">rank</span> and <span style = "color:#FF69B4; font-weight: bold">qauntile</span>--especially in nonparametric statistics, robust statistics and uncertainty quantification.
+        I obtained my PhD in Statistics from LSE, working under the supervision of <a  href = "https://personal.lse.ac.uk/wangt60">Tengyao Wang</a> and <a  href = "https://personal.lse.ac.uk/cheny100/">Yining Chen</a>. 
         </p>
         <p>
-        I am fortunate to be supervised by <a  href = "https://personal.lse.ac.uk/wangt60">Tengyao Wang</a> and <a  href = "https://personal.lse.ac.uk/cheny100/">Yining Chen</a>.
+        In general, I am intrigued by any methods elegently utilise the concept of <span style = "color:#FF69B4; font-weight: bold">rank</span> and <span style = "color:#FF69B4; font-weight: bold">qauntile</span>--especially in nonparametric statistics, robust statistics and uncertainty quantification.
         </p>
         <span>
         <a href="https://scholar.google.com/citations?user=XnH5giYAAAAJ&hl=en&oi=sra">Google Scholar</a>
@@ -32,6 +32,8 @@ layout: home
         <a href="https://github.com/YANG1030">Github</a>
         &bull;
         <a href="https://dblp.org/pid/379/5665.html">DBLP</a>
+        &bull; 
+         <a href="https://www.linkedin.com/in/xuzhi-yang-9257871b1/">Linkedin</a>
         </span>
     </div>
 </div>

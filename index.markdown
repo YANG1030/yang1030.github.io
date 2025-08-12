@@ -30,10 +30,8 @@ layout: home
         <a href="https://scholar.google.com/citations?user=XnH5giYAAAAJ&hl=en&oi=sra">Google Scholar</a>
         &bull;
         <a href="https://github.com/YANG1030">Github</a>
-        &bull;
-        <a href="https://dblp.org/pid/379/5665.html">DBLP</a>
         &bull; 
-         <a href="https://www.linkedin.com/in/xuzhi-yang-9257871b1/">Linkedin</a>
+        <a href="https://www.linkedin.com/in/xuzhi-yang-9257871b1/">Linkedin</a>
         </span>
     </div>
 </div>

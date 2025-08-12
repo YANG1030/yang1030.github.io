@@ -39,5 +39,6 @@ layout: home
 
 ## What's new
 - **Aug, 2025** New preprint on a new correlation coefficient for singular dependencies between random variables is available on arxiv. [paper](/assets/papers/CovCorr.pdf)
+- **May, 2025** PhD viva passed -- grateful to my committee, <a href = "https://davy.paindaveine.web.ulb.be/">Davy Paindaveine</a> and <a "https://stats.lse.ac.uk/bergsma/">Wicher Bergsma</a>. 
 - **July, 2024** New preprint on offline RL when considering an optimal transport-based switching cost is available on arxiv. [paper](/assets/papers/SwichingCost.pdf)  
 - **May, 2024** Our paper on multiple-output composite quantile regression via optimal transport method is accepted by COLT 2024! [paper](/assets/papers/yang24.pdf) 

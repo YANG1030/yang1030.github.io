@@ -10,7 +10,7 @@ The following is a full list of my publications and working papers.
 
 ### **Publications and preprints**
 
-<span style="color:#FF69B4">**Coverage correlation: detecting singular dependencies between random variables**.</span> <br /> Xuzhi Yang, Mona Azadkia and Tengyao Wang (2025+); *Preprint*, axXiv: 2508.06402
+<span style="color:#FF69B4">**Coverage correlation: detecting singular dependencies between random variables**.</span> <br /> Xuzhi Yang, Mona Azadkia and Tengyao Wang (2025+); *Preprint*, aXiv: 2508.06402
  <br /> 
  [paper](/assets/papers/CovCorr.pdf)
  [code](https://github.com/wangtengyao/covercorr)

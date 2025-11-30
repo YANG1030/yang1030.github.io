@@ -14,6 +14,7 @@ The following is a full list of my publications and working papers.
  <br /> 
  [paper](/assets/papers/CovCorr.pdf)
  [code](https://github.com/wangtengyao/covercorr)
+ [bib](/assets/bib/yang2025coverage.bib)
 
  <span style="color:#FF69B4">**On the squashed distribution policy for maximum entropy reinforcement learning**.</span> <br /> Linjie Xu, Xuzhi Yang and Tao Ma (2025+); *Preprint*; *Submitted*
 

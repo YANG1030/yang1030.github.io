@@ -164,7 +164,9 @@ homeView =
                     , li [] [ text "Non-Euclidean geometry." ]
                     ]
                 , p []
-                    [ text "Recently, I am also excited about developing reliable AI systems for mathematical proof verification by combining LLMs with formal languages such as Lean."
+                    [ text "I am also interested in developing reliable AI systems for theorem proof verification via formal languages such as "
+                    , a [ href "https://lean-lang.org/", target "_blank"] [ text "Lean" ]
+                    , text "."
                     ]
                 , div [ class "quick-links" ]
                     [ a [ href "https://scholar.google.com/citations?user=XnH5giYAAAAJ&hl=en&oi=sra", target "_blank" ] [ text "Google Scholar" ]

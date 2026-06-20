@@ -5383,7 +5383,19 @@ var $author$project$Main$homeView = A2(
 							_List_Nil,
 							_List_fromArray(
 								[
-									$elm$html$Html$text('Recently, I am also excited about developing reliable AI systems for mathematical proof verification by combining LLMs with formal languages such as Lean.')
+									$elm$html$Html$text('I am also interested in developing reliable AI systems for theorem proof verification via formal languages such as '),
+									A2(
+									$elm$html$Html$a,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$href('https://lean-lang.org/'),
+											$elm$html$Html$Attributes$target('_blank')
+										]),
+									_List_fromArray(
+										[
+											$elm$html$Html$text('Lean')
+										])),
+									$elm$html$Html$text('.')
 								])),
 							A2(
 							$elm$html$Html$div,

@@ -5214,6 +5214,7 @@ var $elm$html$Html$Attributes$href = function (url) {
 		_VirtualDom_noJavaScriptUri(url));
 };
 var $elm$html$Html$img = _VirtualDom_node('img');
+var $elm$html$Html$li = _VirtualDom_node('li');
 var $elm$html$Html$article = _VirtualDom_node('article');
 var $elm$html$Html$p = _VirtualDom_node('p');
 var $elm$html$Html$span = _VirtualDom_node('span');
@@ -5269,8 +5270,8 @@ var $elm$html$Html$Attributes$src = function (url) {
 		'src',
 		_VirtualDom_noJavaScriptOrHtmlUri(url));
 };
-var $elm$html$Html$strong = _VirtualDom_node('strong');
 var $elm$html$Html$Attributes$target = $elm$html$Html$Attributes$stringProperty('target');
+var $elm$html$Html$ul = _VirtualDom_node('ul');
 var $author$project$Main$homeView = A2(
 	$elm$html$Html$div,
 	_List_Nil,
@@ -5348,23 +5349,41 @@ var $author$project$Main$homeView = A2(
 							_List_Nil,
 							_List_fromArray(
 								[
-									$elm$html$Html$text('My work is driven by methods that elegantly use '),
+									$elm$html$Html$text('My research is theoretical in nature, aiming to understand the mathematical principles underlying statistics and machine learning. I develop theories and methods based on:')
+								])),
+							A2(
+							$elm$html$Html$ul,
+							_List_Nil,
+							_List_fromArray(
+								[
 									A2(
-									$elm$html$Html$strong,
+									$elm$html$Html$li,
 									_List_Nil,
 									_List_fromArray(
 										[
-											$elm$html$Html$text('rank')
+											$elm$html$Html$text('Optimal transport theory;')
 										])),
-									$elm$html$Html$text(' and '),
 									A2(
-									$elm$html$Html$strong,
+									$elm$html$Html$li,
 									_List_Nil,
 									_List_fromArray(
 										[
-											$elm$html$Html$text('quantile')
+											$elm$html$Html$text('Statistics, e.g. nonparametric statistics and robust statistics;')
 										])),
-									$elm$html$Html$text(', especially in nonparametric statistics, robust statistics, and uncertainty quantification.')
+									A2(
+									$elm$html$Html$li,
+									_List_Nil,
+									_List_fromArray(
+										[
+											$elm$html$Html$text('Non-Euclidean geometry.')
+										]))
+								])),
+							A2(
+							$elm$html$Html$p,
+							_List_Nil,
+							_List_fromArray(
+								[
+									$elm$html$Html$text('Recently, I am also excited about developing reliable AI systems for mathematical proof verification by combining LLMs with formal languages such as Lean.')
 								])),
 							A2(
 							$elm$html$Html$div,
@@ -5589,7 +5608,7 @@ var $author$project$Main$papersView = A2(
 				]),
 			A2($elm$core$List$map, $author$project$Main$paperCard, $author$project$Main$papers))
 		]));
-var $elm$html$Html$li = _VirtualDom_node('li');
+var $elm$html$Html$strong = _VirtualDom_node('strong');
 var $elm$core$String$toLower = _String_toLower;
 var $author$project$Main$talkListItem = function (talk) {
 	return A2(
@@ -5679,7 +5698,6 @@ var $author$project$Main$talks = _List_fromArray(
 	},
 		{n: 'Jul 2023', o: 'School of Mathematics and Statistics, Northeast Normal University', l: 'Talk', s: $elm$core$Maybe$Nothing, c: 'Multiple-output composite quantile regression through an optimal transport lens'}
 	]);
-var $elm$html$Html$ul = _VirtualDom_node('ul');
 var $author$project$Main$talksView = A2(
 	$elm$html$Html$section,
 	_List_fromArray(

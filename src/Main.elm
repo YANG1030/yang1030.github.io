@@ -1,8 +1,8 @@
 module Main exposing (main)
 
 import Browser
-import Html exposing (Html, a, article, button, div, footer, h1, h2, h3, header, img, li, main_, nav, p, section, span, strong, text, ul)
-import Html.Attributes exposing (alt, class, href, id, src, target)
+import Html exposing (Html, a, article, button, div, h3, header, img, li, main_, nav, p, section, span, strong, text, ul)
+import Html.Attributes exposing (alt, class, href, id, src, target, title)
 import Html.Events exposing (onClick)
 
 
@@ -14,11 +14,14 @@ type Section
 
 
 type alias Model =
-    { section : Section }
+    { section : Section
+    , darkMode : Bool
+    }
 
 
 type Msg
     = Show Section
+    | ToggleTheme
 
 
 type alias Paper =
@@ -47,7 +50,7 @@ type alias Talk =
 main : Program () Model Msg
 main =
     Browser.sandbox
-        { init = { section = Home }
+        { init = { section = Home, darkMode = False }
         , update = update
         , view = view
         }
@@ -59,10 +62,21 @@ update msg model =
         Show section ->
             { model | section = section }
 
+        ToggleTheme ->
+            { model | darkMode = not model.darkMode }
+
 
 view : Model -> Html Msg
 view model =
-    div []
+    div
+        [ class
+            (if model.darkMode then
+                "app-shell theme-dark"
+
+             else
+                "app-shell"
+            )
+        ]
         [ header [ class "site-header" ]
             [ nav [ class "topbar", id "top" ]
                 [ a [ class "brand", href "#top", onClick (Show Home) ] [ text "Xuzhi Yang" ]
@@ -72,14 +86,10 @@ view model =
                     , navButton model Talks "Talks"
                     , navButton model Teaching "Teaching"
                     ]
+                , themeButton model.darkMode
                 ]
             ]
         , main_ [] [ currentSection model.section ]
-        , footer [ class "site-footer" ]
-            [ span [] [ text "Xuzhi Yang" ]
-            , span [] [ text "PhD in Statistics, LSE" ]
-            , a [ href "mailto:yangxuzhi3@gmail.com" ] [ text "yangxuzhi3@gmail.com" ]
-            ]
         ]
 
 
@@ -96,6 +106,23 @@ navButton model section label =
         , onClick (Show section)
         ]
         [ text label ]
+
+
+themeButton : Bool -> Html Msg
+themeButton darkMode =
+    button
+        [ class "theme-toggle"
+        , onClick ToggleTheme
+        , title "Switch color mode"
+        ]
+        [ text
+            (if darkMode then
+                "☀"
+
+             else
+                "☾"
+            )
+        ]
 
 
 currentSection : Section -> Html Msg
@@ -121,9 +148,7 @@ homeView =
             [ div [ class "hero-media" ]
                 [ img [ src "assets/me.jpg", alt "Portrait of Xuzhi Yang" ] [] ]
             , div [ class "hero-copy" ]
-                [ p [ class "eyebrow" ] [ text "Statistics, Optimal Transport, Automated Theorem Proving" ]
-                , h1 [] [ text "Xuzhi Yang" ]
-                , p [ class "lead" ]
+                [ p [ class "lead" ]
                     [ text "I obtained my PhD in Statistics from the London School of Economics and Political Science, supervised by "
                     , a [ href "https://personal.lse.ac.uk/wangt60", target "_blank" ] [ text "Tengyao Wang" ]
                     , text " and "
@@ -141,18 +166,16 @@ homeView =
                     [ a [ href "https://scholar.google.com/citations?user=XnH5giYAAAAJ&hl=en&oi=sra", target "_blank" ] [ text "Google Scholar" ]
                     , a [ href "https://github.com/YANG1030", target "_blank" ] [ text "GitHub" ]
                     , a [ href "https://www.linkedin.com/in/xuzhi-yang-9257871b1/", target "_blank" ] [ text "LinkedIn" ]
-                    , a [ href "assets/cv.pdf" ] [ text "CV" ]
                     ]
                 ]
             ]
         , section [ class "section-band" ]
             [ div [ class "section-heading" ]
                 [ span [ class "section-kicker" ] [ text "Recent" ]
-                , h2 [] [ text "What's New" ]
                 ]
             , div [ class "news-list" ]
                 [ newsItem "Jun. 2026" "A revised manuscript of the coverage correlation coefficient paper, including substantial new content, is now available." "assets/papers/CovCorr.pdf"
-                , newsItem "Mar. 2026" "I will join KU Leuven as a Postdoctoral Researcher in the SUMMER, 2026, working with Prof. Irène Gijbels and Prof. Claeskens Gerda." ""
+                , newsItem "Mar. 2026" "I will join KU Leuven as a Postdoc Researcher in the SUMMER, 2026, working with Prof. Irène Gijbels and Prof. Claeskens Gerda." ""
                 , newsItem "Aug. 2025" "New preprint on a correlation coefficient for singular dependencies between random variables is available." "assets/papers/CovCorr.pdf"
                 , newsItem "May 2025" "PhD viva passed, with thanks to Davy Paindaveine and Wicher Bergsma." ""
                 ]
@@ -177,12 +200,7 @@ newsItem date body link =
 papersView : Html Msg
 papersView =
     section [ class "content-section" ]
-        [ div [ class "section-heading" ]
-            [ span [ class "section-kicker" ] [ text "Research" ]
-            , h2 [] [ text "Publications and Working Papers" ]
-            , p [] [ text "A selected list of publications, preprints, and theses." ]
-            ]
-        , div [ class "paper-list" ] (List.map paperCard papers)
+        [ div [ class "paper-list" ] (List.map paperCard papers)
         ]
 
 
@@ -203,41 +221,34 @@ linkView link =
 
 talksView : Html Msg
 talksView =
-    section [ class "content-section" ]
-        [ div [ class "section-heading" ]
-            [ span [ class "section-kicker" ] [ text "Presentations" ]
-            , h2 [] [ text "Talks and Posters" ]
-            ]
-        , div [ class "timeline" ] (List.map talkView talks)
+    section [ class "content-section teaching" ]
+        [ ul [ class "talk-simple-list" ] (List.map talkListItem talks)
         ]
 
 
-talkView : Talk -> Html Msg
-talkView talk =
-    article [ class "timeline-item" ]
-        [ span [ class ("kind kind-" ++ String.toLower talk.kind) ] [ text talk.kind ]
-        , div []
-            [ h3 [] [ text talk.title ]
-            , p [] [ text (talk.event ++ ", " ++ talk.date) ]
-            , case talk.link of
-                Just link ->
-                    div [ class "item-links" ] [ linkView link ]
+talkListItem : Talk -> Html Msg
+talkListItem talk =
+    li []
+        (case talk.link of
+            Just link ->
+                [ span [ class ("talk-tag talk-tag-" ++ String.toLower talk.kind) ] [ text talk.kind ]
+                , strong [] [ text talk.title ]
+                , text (" - " ++ talk.event ++ ", " ++ talk.date ++ ". ")
+                , linkView link
+                ]
 
-                Nothing ->
-                    text ""
-            ]
-        ]
+            Nothing ->
+                [ span [ class ("talk-tag talk-tag-" ++ String.toLower talk.kind) ] [ text talk.kind ]
+                , strong [] [ text talk.title ]
+                , text (" - " ++ talk.event ++ ", " ++ talk.date ++ ".")
+                ]
+        )
 
 
 teachingView : Html Msg
 teachingView =
     section [ class "content-section teaching" ]
-        [ div [ class "section-heading" ]
-            [ span [ class "section-kicker" ] [ text "Teaching" ]
-            , h2 [] [ text "Courses" ]
-            , p [] [ text "Graduate teaching assistant experience across statistics, graph learning, data analysis, and functional data analysis." ]
-            ]
-        , h3 [] [ text "London School of Economics" ]
+        [ h3 [] [ text "London School of Economics" ]
         , ul []
             [ li [] [ text "ST102 Elementary Statistical Theory, Sep 2021 - Mar 2025" ]
             , li [] [ text "ST457 Graph Data Analysis and Representation Learning, Oct 2022 - Jan 2023" ]
@@ -255,8 +266,8 @@ papers : List Paper
 papers =
     [ { title = "Coverage correlation: detecting singular dependencies between random variables"
       , authors = "Xuzhi Yang, Mona Azadkia and Tengyao Wang"
-      , venue = "Preprint, arXiv:2508.06402, 2026+"
-      , links = [ { label = "Paper", url = "assets/papers/CovCorr.pdf" }, { label = "Code", url = "https://github.com/wangtengyao/covercorr" }, {label = "Bib", url = "assets/bib/yang2025coverage.bib" } ]
+      , venue = "Preprint, submitted, arXiv:2508.06402, 2026+"
+      , links = [ { label = "Paper", url = "assets/papers/CovCorr.pdf" }, { label = "Code", url = "https://github.com/wangtengyao/covercorr" }, { label = "Bib", url = "assets/bib/yang2025coverage.bib" } ]
       }
     , { title = "On the squashed distribution policy for maximum entropy reinforcement learning"
       , authors = "Linjie Xu, Xuzhi Yang and Tao Ma"
@@ -265,7 +276,7 @@ papers =
       }
     , { title = "To switch or not to switch? Balanced policy switching in offline reinforcement learning"
       , authors = "Tao Ma, Xuzhi Yang and Zoltan Szabo"
-      , venue = "Preprint, arXiv:2407.01837, 2025"
+      , venue = "Preprint, arXiv:2407.01837, 2026+"
       , links = [ { label = "Paper", url = "assets/papers/SwichingCost.pdf" } ]
       }
     , { title = "Multiple-output composite quantile regression through an optimal transport lens"
@@ -293,7 +304,8 @@ papers =
 
 talks : List Talk
 talks =
-    [ { kind = "Poster", event = "Workshop on uncertainty in multivariate, non-Euclidean, and functional spaces: theory and practice, Isaac Newton Institute, Cambridge", date = "May 2025", title = "The coverage correlation coefficient: Going beyond functional dependence", link = Just { label = "Poster", url = "assets/papers/coverage_poster.pdf" } }
+    [ { kind = "Talk", event = "New Researcher Conference Asia, University of Hong Kong", date = "Jun 2026", title = "Coverage correlation: detecting singular dependencies between random variables", link = Nothing }
+    , { kind = "Poster", event = "Workshop on uncertainty in multivariate, non-Euclidean, and functional spaces: theory and practice, Isaac Newton Institute, Cambridge", date = "May 2025", title = "The coverage correlation coefficient: Going beyond functional dependence", link = Just { label = "Poster", url = "assets/papers/coverage_poster.pdf" } }
     , { kind = "Talk", event = "Research Showcase Day, LSE", date = "Apr 2025", title = "Coverage correlation coefficient", link = Nothing }
     , { kind = "Talk", event = "Data Science Society, LSE", date = "Mar 2025", title = "Multivariate rank via optimal assignment", link = Nothing }
     , { kind = "Talk", event = "Tengyao's group meeting, LSE", date = "Jul 2024", title = "A brief introduction of diffusion model", link = Just { label = "Notes", url = "assets/papers/DM.pdf" } }

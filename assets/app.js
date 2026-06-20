@@ -784,11 +784,11 @@ function _Debug_crash_UNUSED(identifier, fact1, fact2, fact3, fact4)
 
 function _Debug_regionToString(region)
 {
-	if (region.T.J === region.Y.J)
+	if (region.U.K === region.Z.K)
 	{
-		return 'on line ' + region.T.J;
+		return 'on line ' + region.U.K;
 	}
-	return 'on lines ' + region.T.J + ' through ' + region.Y.J;
+	return 'on lines ' + region.U.K + ' through ' + region.Z.K;
 }
 
 
@@ -1857,9 +1857,9 @@ var _Platform_worker = F4(function(impl, flagDecoder, debugMetadata, args)
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.aD,
+		impl.aE,
+		impl.aL,
 		impl.aK,
-		impl.aJ,
 		function() { return function() {} }
 	);
 });
@@ -2720,8 +2720,8 @@ var _VirtualDom_mapEventRecord = F2(function(func, record)
 {
 	return {
 		y: func(record.y),
-		U: record.U,
-		R: record.R
+		V: record.V,
+		S: record.S
 	}
 });
 
@@ -2990,10 +2990,10 @@ function _VirtualDom_makeCallback(eventNode, initialHandler)
 
 		var value = result.a;
 		var message = !tag ? value : tag < 3 ? value.a : value.y;
-		var stopPropagation = tag == 1 ? value.b : tag == 3 && value.U;
+		var stopPropagation = tag == 1 ? value.b : tag == 3 && value.V;
 		var currentEventNode = (
 			stopPropagation && event.stopPropagation(),
-			(tag == 2 ? value.b : tag == 3 && value.R) && event.preventDefault(),
+			(tag == 2 ? value.b : tag == 3 && value.S) && event.preventDefault(),
 			eventNode
 		);
 		var tagger;
@@ -3943,11 +3943,11 @@ var _Browser_element = _Debugger_element || F4(function(impl, flagDecoder, debug
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.aD,
+		impl.aE,
+		impl.aL,
 		impl.aK,
-		impl.aJ,
 		function(sendToApp, initialModel) {
-			var view = impl.aL;
+			var view = impl.aM;
 			/**/
 			var domNode = args['node'];
 			//*/
@@ -3979,12 +3979,12 @@ var _Browser_document = _Debugger_document || F4(function(impl, flagDecoder, deb
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.aD,
+		impl.aE,
+		impl.aL,
 		impl.aK,
-		impl.aJ,
 		function(sendToApp, initialModel) {
-			var divertHrefToApp = impl.S && impl.S(sendToApp)
-			var view = impl.aL;
+			var divertHrefToApp = impl.T && impl.T(sendToApp)
+			var view = impl.aM;
 			var title = _VirtualDom_doc.title;
 			var bodyNode = _VirtualDom_doc.body;
 			var currNode = _VirtualDom_virtualize(bodyNode);
@@ -3992,12 +3992,12 @@ var _Browser_document = _Debugger_document || F4(function(impl, flagDecoder, deb
 			{
 				_VirtualDom_divertHrefToApp = divertHrefToApp;
 				var doc = view(model);
-				var nextNode = _VirtualDom_node('body')(_List_Nil)(doc.aw);
+				var nextNode = _VirtualDom_node('body')(_List_Nil)(doc.ax);
 				var patches = _VirtualDom_diff(currNode, nextNode);
 				bodyNode = _VirtualDom_applyPatches(bodyNode, currNode, patches, sendToApp);
 				currNode = nextNode;
 				_VirtualDom_divertHrefToApp = 0;
-				(title !== doc.e) && (_VirtualDom_doc.title = title = doc.e);
+				(title !== doc.c) && (_VirtualDom_doc.title = title = doc.c);
 			});
 		}
 	);
@@ -4053,12 +4053,12 @@ function _Browser_makeAnimator(model, draw)
 
 function _Browser_application(impl)
 {
-	var onUrlChange = impl.aF;
-	var onUrlRequest = impl.aG;
+	var onUrlChange = impl.aG;
+	var onUrlRequest = impl.aH;
 	var key = function() { key.a(onUrlChange(_Browser_getUrl())); };
 
 	return _Browser_document({
-		S: function(sendToApp)
+		T: function(sendToApp)
 		{
 			key.a = sendToApp;
 			_Browser_window.addEventListener('popstate', key);
@@ -4074,9 +4074,9 @@ function _Browser_application(impl)
 					var next = $elm$url$Url$fromString(href).a;
 					sendToApp(onUrlRequest(
 						(next
-							&& curr.aj === next.aj
-							&& curr.aa === next.aa
-							&& curr.ag.a === next.ag.a
+							&& curr.ak === next.ak
+							&& curr.ab === next.ab
+							&& curr.ah.a === next.ah.a
 						)
 							? $elm$browser$Browser$Internal(next)
 							: $elm$browser$Browser$External(href)
@@ -4084,13 +4084,13 @@ function _Browser_application(impl)
 				}
 			});
 		},
-		aD: function(flags)
+		aE: function(flags)
 		{
-			return A3(impl.aD, flags, _Browser_getUrl(), key);
+			return A3(impl.aE, flags, _Browser_getUrl(), key);
 		},
+		aM: impl.aM,
 		aL: impl.aL,
-		aK: impl.aK,
-		aJ: impl.aJ
+		aK: impl.aK
 	});
 }
 
@@ -4156,17 +4156,17 @@ var _Browser_decodeEvent = F2(function(decoder, event)
 function _Browser_visibilityInfo()
 {
 	return (typeof _VirtualDom_doc.hidden !== 'undefined')
-		? { aB: 'hidden', ax: 'visibilitychange' }
+		? { aC: 'hidden', ay: 'visibilitychange' }
 		:
 	(typeof _VirtualDom_doc.mozHidden !== 'undefined')
-		? { aB: 'mozHidden', ax: 'mozvisibilitychange' }
+		? { aC: 'mozHidden', ay: 'mozvisibilitychange' }
 		:
 	(typeof _VirtualDom_doc.msHidden !== 'undefined')
-		? { aB: 'msHidden', ax: 'msvisibilitychange' }
+		? { aC: 'msHidden', ay: 'msvisibilitychange' }
 		:
 	(typeof _VirtualDom_doc.webkitHidden !== 'undefined')
-		? { aB: 'webkitHidden', ax: 'webkitvisibilitychange' }
-		: { aB: 'hidden', ax: 'visibilitychange' };
+		? { aC: 'webkitHidden', ay: 'webkitvisibilitychange' }
+		: { aC: 'hidden', ay: 'visibilitychange' };
 }
 
 
@@ -4247,12 +4247,12 @@ var _Browser_call = F2(function(functionName, id)
 function _Browser_getViewport()
 {
 	return {
-		an: _Browser_getScene(),
-		aq: {
-			as: _Browser_window.pageXOffset,
-			at: _Browser_window.pageYOffset,
-			ar: _Browser_doc.documentElement.clientWidth,
-			_: _Browser_doc.documentElement.clientHeight
+		ao: _Browser_getScene(),
+		ar: {
+			at: _Browser_window.pageXOffset,
+			au: _Browser_window.pageYOffset,
+			as: _Browser_doc.documentElement.clientWidth,
+			aa: _Browser_doc.documentElement.clientHeight
 		}
 	};
 }
@@ -4262,8 +4262,8 @@ function _Browser_getScene()
 	var body = _Browser_doc.body;
 	var elem = _Browser_doc.documentElement;
 	return {
-		ar: Math.max(body.scrollWidth, body.offsetWidth, elem.scrollWidth, elem.offsetWidth, elem.clientWidth),
-		_: Math.max(body.scrollHeight, body.offsetHeight, elem.scrollHeight, elem.offsetHeight, elem.clientHeight)
+		as: Math.max(body.scrollWidth, body.offsetWidth, elem.scrollWidth, elem.offsetWidth, elem.clientWidth),
+		aa: Math.max(body.scrollHeight, body.offsetHeight, elem.scrollHeight, elem.offsetHeight, elem.clientHeight)
 	};
 }
 
@@ -4286,15 +4286,15 @@ function _Browser_getViewportOf(id)
 	return _Browser_withNode(id, function(node)
 	{
 		return {
-			an: {
-				ar: node.scrollWidth,
-				_: node.scrollHeight
+			ao: {
+				as: node.scrollWidth,
+				aa: node.scrollHeight
 			},
-			aq: {
-				as: node.scrollLeft,
-				at: node.scrollTop,
-				ar: node.clientWidth,
-				_: node.clientHeight
+			ar: {
+				at: node.scrollLeft,
+				au: node.scrollTop,
+				as: node.clientWidth,
+				aa: node.clientHeight
 			}
 		};
 	});
@@ -4324,18 +4324,18 @@ function _Browser_getElement(id)
 		var x = _Browser_window.pageXOffset;
 		var y = _Browser_window.pageYOffset;
 		return {
-			an: _Browser_getScene(),
-			aq: {
-				as: x,
-				at: y,
-				ar: _Browser_doc.documentElement.clientWidth,
-				_: _Browser_doc.documentElement.clientHeight
+			ao: _Browser_getScene(),
+			ar: {
+				at: x,
+				au: y,
+				as: _Browser_doc.documentElement.clientWidth,
+				aa: _Browser_doc.documentElement.clientHeight
 			},
-			az: {
-				as: x + rect.left,
-				at: y + rect.top,
-				ar: rect.width,
-				_: rect.height
+			aA: {
+				at: x + rect.left,
+				au: y + rect.top,
+				as: rect.width,
+				aa: rect.height
 			}
 		};
 	});
@@ -4370,6 +4370,7 @@ function _Browser_load(url)
 		}
 	}));
 }
+var $elm$core$Basics$False = 1;
 var $author$project$Main$Home = 0;
 var $elm$core$Basics$EQ = 1;
 var $elm$core$Basics$GT = 2;
@@ -4472,7 +4473,6 @@ var $elm$core$Result$Ok = function (a) {
 var $elm$json$Json$Decode$OneOf = function (a) {
 	return {$: 2, a: a};
 };
-var $elm$core$Basics$False = 1;
 var $elm$core$Basics$add = _Basics_add;
 var $elm$core$Maybe$Just = function (a) {
 	return {$: 0, a: a};
@@ -4780,22 +4780,22 @@ var $elm$core$Array$builderToArray = F2(
 		if (!builder.a) {
 			return A4(
 				$elm$core$Array$Array_elm_builtin,
-				$elm$core$Elm$JsArray$length(builder.c),
+				$elm$core$Elm$JsArray$length(builder.d),
 				$elm$core$Array$shiftStep,
 				$elm$core$Elm$JsArray$empty,
-				builder.c);
+				builder.d);
 		} else {
 			var treeLen = builder.a * $elm$core$Array$branchFactor;
 			var depth = $elm$core$Basics$floor(
 				A2($elm$core$Basics$logBase, $elm$core$Array$branchFactor, treeLen - 1));
-			var correctNodeList = reverseNodeList ? $elm$core$List$reverse(builder.d) : builder.d;
+			var correctNodeList = reverseNodeList ? $elm$core$List$reverse(builder.e) : builder.e;
 			var tree = A2($elm$core$Array$treeFromBuilder, correctNodeList, builder.a);
 			return A4(
 				$elm$core$Array$Array_elm_builtin,
-				$elm$core$Elm$JsArray$length(builder.c) + treeLen,
+				$elm$core$Elm$JsArray$length(builder.d) + treeLen,
 				A2($elm$core$Basics$max, 5, depth * $elm$core$Array$shiftStep),
 				tree,
-				builder.c);
+				builder.d);
 		}
 	});
 var $elm$core$Basics$idiv = _Basics_idiv;
@@ -4808,7 +4808,7 @@ var $elm$core$Array$initializeHelp = F5(
 				return A2(
 					$elm$core$Array$builderToArray,
 					false,
-					{d: nodeList, a: (len / $elm$core$Array$branchFactor) | 0, c: tail});
+					{e: nodeList, a: (len / $elm$core$Array$branchFactor) | 0, d: tail});
 			} else {
 				var leaf = $elm$core$Array$Leaf(
 					A3($elm$core$Elm$JsArray$initialize, $elm$core$Array$branchFactor, fromIndex, fn));
@@ -4875,7 +4875,7 @@ var $elm$url$Url$Http = 0;
 var $elm$url$Url$Https = 1;
 var $elm$url$Url$Url = F6(
 	function (protocol, host, port_, path, query, fragment) {
-		return {Z: fragment, aa: host, ae: path, ag: port_, aj: protocol, ak: query};
+		return {_: fragment, ab: host, af: path, ah: port_, ak: protocol, al: query};
 	});
 var $elm$core$String$contains = _String_contains;
 var $elm$core$String$length = _String_length;
@@ -5160,30 +5160,39 @@ var $elm$core$Platform$Sub$none = $elm$core$Platform$Sub$batch(_List_Nil);
 var $elm$browser$Browser$sandbox = function (impl) {
 	return _Browser_element(
 		{
-			aD: function (_v0) {
-				return _Utils_Tuple2(impl.aD, $elm$core$Platform$Cmd$none);
+			aE: function (_v0) {
+				return _Utils_Tuple2(impl.aE, $elm$core$Platform$Cmd$none);
 			},
-			aJ: function (_v1) {
+			aK: function (_v1) {
 				return $elm$core$Platform$Sub$none;
 			},
-			aK: F2(
+			aL: F2(
 				function (msg, model) {
 					return _Utils_Tuple2(
-						A2(impl.aK, msg, model),
+						A2(impl.aL, msg, model),
 						$elm$core$Platform$Cmd$none);
 				}),
-			aL: impl.aL
+			aM: impl.aM
 		});
 };
+var $elm$core$Basics$not = _Basics_not;
 var $author$project$Main$update = F2(
 	function (msg, model) {
-		var section = msg;
-		return _Utils_update(
-			model,
-			{K: section});
+		if (!msg.$) {
+			var section = msg.a;
+			return _Utils_update(
+				model,
+				{L: section});
+		} else {
+			return _Utils_update(
+				model,
+				{F: !model.F});
+		}
 	});
 var $author$project$Main$Papers = 1;
-var $author$project$Main$Show = $elm$core$Basics$identity;
+var $author$project$Main$Show = function (a) {
+	return {$: 0, a: a};
+};
 var $author$project$Main$Talks = 2;
 var $author$project$Main$Teaching = 3;
 var $elm$html$Html$a = _VirtualDom_node('a');
@@ -5198,8 +5207,6 @@ var $elm$html$Html$Attributes$stringProperty = F2(
 var $elm$html$Html$Attributes$class = $elm$html$Html$Attributes$stringProperty('className');
 var $elm$html$Html$Attributes$alt = $elm$html$Html$Attributes$stringProperty('alt');
 var $elm$html$Html$div = _VirtualDom_node('div');
-var $elm$html$Html$h1 = _VirtualDom_node('h1');
-var $elm$html$Html$h2 = _VirtualDom_node('h2');
 var $elm$html$Html$Attributes$href = function (url) {
 	return A2(
 		$elm$html$Html$Attributes$stringProperty,
@@ -5306,23 +5313,6 @@ var $author$project$Main$homeView = A2(
 							$elm$html$Html$p,
 							_List_fromArray(
 								[
-									$elm$html$Html$Attributes$class('eyebrow')
-								]),
-							_List_fromArray(
-								[
-									$elm$html$Html$text('Statistics, Optimal Transport, Automated Theorem Proving')
-								])),
-							A2(
-							$elm$html$Html$h1,
-							_List_Nil,
-							_List_fromArray(
-								[
-									$elm$html$Html$text('Xuzhi Yang')
-								])),
-							A2(
-							$elm$html$Html$p,
-							_List_fromArray(
-								[
 									$elm$html$Html$Attributes$class('lead')
 								]),
 							_List_fromArray(
@@ -5416,16 +5406,6 @@ var $author$project$Main$homeView = A2(
 									_List_fromArray(
 										[
 											$elm$html$Html$text('LinkedIn')
-										])),
-									A2(
-									$elm$html$Html$a,
-									_List_fromArray(
-										[
-											$elm$html$Html$Attributes$href('assets/cv.pdf')
-										]),
-									_List_fromArray(
-										[
-											$elm$html$Html$text('CV')
 										]))
 								]))
 						]))
@@ -5455,13 +5435,6 @@ var $author$project$Main$homeView = A2(
 							_List_fromArray(
 								[
 									$elm$html$Html$text('Recent')
-								])),
-							A2(
-							$elm$html$Html$h2,
-							_List_Nil,
-							_List_fromArray(
-								[
-									$elm$html$Html$text('What\'s New')
 								]))
 						])),
 					A2(
@@ -5473,7 +5446,7 @@ var $author$project$Main$homeView = A2(
 					_List_fromArray(
 						[
 							A3($author$project$Main$newsItem, 'Jun. 2026', 'A revised manuscript of the coverage correlation coefficient paper, including substantial new content, is now available.', 'assets/papers/CovCorr.pdf'),
-							A3($author$project$Main$newsItem, 'Mar. 2026', 'I will join KU Leuven as a Postdoctoral Researcher in the SUMMER, 2026, working with Prof. Irène Gijbels and Prof. Claeskens Gerda.', ''),
+							A3($author$project$Main$newsItem, 'Mar. 2026', 'I will join KU Leuven as a Postdoc Researcher in the SUMMER, 2026, working with Prof. Irène Gijbels and Prof. Claeskens Gerda.', ''),
 							A3($author$project$Main$newsItem, 'Aug. 2025', 'New preprint on a correlation coefficient for singular dependencies between random variables is available.', 'assets/papers/CovCorr.pdf'),
 							A3($author$project$Main$newsItem, 'May 2025', 'PhD viva passed, with thanks to Davy Paindaveine and Wicher Bergsma.', '')
 						]))
@@ -5507,7 +5480,7 @@ var $author$project$Main$paperCard = function (paper) {
 				_List_Nil,
 				_List_fromArray(
 					[
-						$elm$html$Html$text(paper.e)
+						$elm$html$Html$text(paper.c)
 					])),
 				A2(
 				$elm$html$Html$p,
@@ -5517,7 +5490,7 @@ var $author$project$Main$paperCard = function (paper) {
 					]),
 				_List_fromArray(
 					[
-						$elm$html$Html$text(paper.o)
+						$elm$html$Html$text(paper.r)
 					])),
 				A2(
 				$elm$html$Html$p,
@@ -5527,7 +5500,7 @@ var $author$project$Main$paperCard = function (paper) {
 					]),
 				_List_fromArray(
 					[
-						$elm$html$Html$text(paper.t)
+						$elm$html$Html$text(paper.w)
 					])),
 				A2(
 				$elm$html$Html$div,
@@ -5535,69 +5508,69 @@ var $author$project$Main$paperCard = function (paper) {
 					[
 						$elm$html$Html$Attributes$class('item-links')
 					]),
-				A2($elm$core$List$map, $author$project$Main$linkView, paper.q))
+				A2($elm$core$List$map, $author$project$Main$linkView, paper.t))
 			]));
 };
 var $author$project$Main$papers = _List_fromArray(
 	[
 		{
-		o: 'Xuzhi Yang, Mona Azadkia and Tengyao Wang',
-		q: _List_fromArray(
+		r: 'Xuzhi Yang, Mona Azadkia and Tengyao Wang',
+		t: _List_fromArray(
 			[
 				{f: 'Paper', h: 'assets/papers/CovCorr.pdf'},
 				{f: 'Code', h: 'https://github.com/wangtengyao/covercorr'},
 				{f: 'Bib', h: 'assets/bib/yang2025coverage.bib'}
 			]),
-		e: 'Coverage correlation: detecting singular dependencies between random variables',
-		t: 'Preprint, arXiv:2508.06402, 2026+'
+		c: 'Coverage correlation: detecting singular dependencies between random variables',
+		w: 'Preprint, submitted, arXiv:2508.06402, 2026+'
 	},
-		{o: 'Linjie Xu, Xuzhi Yang and Tao Ma', q: _List_Nil, e: 'On the squashed distribution policy for maximum entropy reinforcement learning', t: 'Preprint, submitted, 2026+'},
+		{r: 'Linjie Xu, Xuzhi Yang and Tao Ma', t: _List_Nil, c: 'On the squashed distribution policy for maximum entropy reinforcement learning', w: 'Preprint, submitted, 2026+'},
 		{
-		o: 'Tao Ma, Xuzhi Yang and Zoltan Szabo',
-		q: _List_fromArray(
+		r: 'Tao Ma, Xuzhi Yang and Zoltan Szabo',
+		t: _List_fromArray(
 			[
 				{f: 'Paper', h: 'assets/papers/SwichingCost.pdf'}
 			]),
-		e: 'To switch or not to switch? Balanced policy switching in offline reinforcement learning',
-		t: 'Preprint, arXiv:2407.01837, 2025'
+		c: 'To switch or not to switch? Balanced policy switching in offline reinforcement learning',
+		w: 'Preprint, arXiv:2407.01837, 2026+'
 	},
 		{
-		o: 'Xuzhi Yang and Tengyao Wang',
-		q: _List_fromArray(
+		r: 'Xuzhi Yang and Tengyao Wang',
+		t: _List_fromArray(
 			[
 				{f: 'Paper', h: 'assets/papers/yang24.pdf'},
 				{f: 'Poster', h: 'assets/papers/yang24_poster.pdf'},
 				{f: 'Video', h: 'https://www.youtube.com/watch?v=wtMAM6VBVVo'}
 			]),
-		e: 'Multiple-output composite quantile regression through an optimal transport lens',
-		t: 'COLT 2024: 5076-5122'
+		c: 'Multiple-output composite quantile regression through an optimal transport lens',
+		w: 'COLT 2024: 5076-5122'
 	},
 		{
-		o: 'Tao Ma* and Xuzhi Yang*',
-		q: _List_fromArray(
+		r: 'Tao Ma* and Xuzhi Yang*',
+		t: _List_fromArray(
 			[
 				{f: 'Paper', h: 'assets/papers/taotiny.pdf'}
 			]),
-		e: 'A framework for policy evaluation enhancement by diffusion models',
-		t: 'Tiny Papers @ ICLR 2024, invited to present'
+		c: 'A framework for policy evaluation enhancement by diffusion models',
+		w: 'Tiny Papers @ ICLR 2024, invited to present'
 	},
 		{
-		o: 'Xuzhi Yang',
-		q: _List_fromArray(
+		r: 'Xuzhi Yang',
+		t: _List_fromArray(
 			[
 				{f: 'Thesis', h: 'assets/papers/Xuzhi_Yang_PhDThesis_finalcopy.pdf'}
 			]),
-		e: 'Applications of Optimal Transport in Multivariate Statistics',
-		t: 'PhD thesis'
+		c: 'Applications of Optimal Transport in Multivariate Statistics',
+		w: 'PhD thesis'
 	},
 		{
-		o: 'Xuzhi Yang',
-		q: _List_fromArray(
+		r: 'Xuzhi Yang',
+		t: _List_fromArray(
 			[
 				{f: 'Thesis', h: 'assets/papers/MasterThesis.pdf'}
 			]),
-		e: 'Test on Two-sample High-dimensional Correlation Matrices with Sparse Settings',
-		t: 'Master thesis'
+		c: 'Test on Two-sample High-dimensional Correlation Matrices with Sparse Settings',
+		w: 'Master thesis'
 	}
 	]);
 var $author$project$Main$papersView = A2(
@@ -5612,179 +5585,102 @@ var $author$project$Main$papersView = A2(
 			$elm$html$Html$div,
 			_List_fromArray(
 				[
-					$elm$html$Html$Attributes$class('section-heading')
-				]),
-			_List_fromArray(
-				[
-					A2(
-					$elm$html$Html$span,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('section-kicker')
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('Research')
-						])),
-					A2(
-					$elm$html$Html$h2,
-					_List_Nil,
-					_List_fromArray(
-						[
-							$elm$html$Html$text('Publications and Working Papers')
-						])),
-					A2(
-					$elm$html$Html$p,
-					_List_Nil,
-					_List_fromArray(
-						[
-							$elm$html$Html$text('A selected list of publications, preprints, and theses.')
-						]))
-				])),
-			A2(
-			$elm$html$Html$div,
-			_List_fromArray(
-				[
 					$elm$html$Html$Attributes$class('paper-list')
 				]),
 			A2($elm$core$List$map, $author$project$Main$paperCard, $author$project$Main$papers))
 		]));
+var $elm$html$Html$li = _VirtualDom_node('li');
 var $elm$core$String$toLower = _String_toLower;
-var $author$project$Main$talkView = function (talk) {
+var $author$project$Main$talkListItem = function (talk) {
 	return A2(
-		$elm$html$Html$article,
-		_List_fromArray(
-			[
-				$elm$html$Html$Attributes$class('timeline-item')
-			]),
-		_List_fromArray(
-			[
-				A2(
-				$elm$html$Html$span,
-				_List_fromArray(
-					[
-						$elm$html$Html$Attributes$class(
-						'kind kind-' + $elm$core$String$toLower(talk.p))
-					]),
-				_List_fromArray(
-					[
-						$elm$html$Html$text(talk.p)
-					])),
-				A2(
-				$elm$html$Html$div,
-				_List_Nil,
-				_List_fromArray(
+		$elm$html$Html$li,
+		_List_Nil,
+		function () {
+			var _v0 = talk.s;
+			if (!_v0.$) {
+				var link = _v0.a;
+				return _List_fromArray(
 					[
 						A2(
-						$elm$html$Html$h3,
+						$elm$html$Html$span,
+						_List_fromArray(
+							[
+								$elm$html$Html$Attributes$class(
+								'talk-tag talk-tag-' + $elm$core$String$toLower(talk.l))
+							]),
+						_List_fromArray(
+							[
+								$elm$html$Html$text(talk.l)
+							])),
+						A2(
+						$elm$html$Html$strong,
 						_List_Nil,
 						_List_fromArray(
 							[
-								$elm$html$Html$text(talk.e)
+								$elm$html$Html$text(talk.c)
+							])),
+						$elm$html$Html$text(' - ' + (talk.o + (', ' + (talk.n + '. ')))),
+						$author$project$Main$linkView(link)
+					]);
+			} else {
+				return _List_fromArray(
+					[
+						A2(
+						$elm$html$Html$span,
+						_List_fromArray(
+							[
+								$elm$html$Html$Attributes$class(
+								'talk-tag talk-tag-' + $elm$core$String$toLower(talk.l))
+							]),
+						_List_fromArray(
+							[
+								$elm$html$Html$text(talk.l)
 							])),
 						A2(
-						$elm$html$Html$p,
+						$elm$html$Html$strong,
 						_List_Nil,
 						_List_fromArray(
 							[
-								$elm$html$Html$text(talk.w + (', ' + talk.v))
+								$elm$html$Html$text(talk.c)
 							])),
-						function () {
-						var _v0 = talk.x;
-						if (!_v0.$) {
-							var link = _v0.a;
-							return A2(
-								$elm$html$Html$div,
-								_List_fromArray(
-									[
-										$elm$html$Html$Attributes$class('item-links')
-									]),
-								_List_fromArray(
-									[
-										$author$project$Main$linkView(link)
-									]));
-						} else {
-							return $elm$html$Html$text('');
-						}
-					}()
-					]))
-			]));
+						$elm$html$Html$text(' - ' + (talk.o + (', ' + (talk.n + '.'))))
+					]);
+			}
+		}());
 };
 var $author$project$Main$talks = _List_fromArray(
 	[
+		{n: 'Jun 2026', o: 'New Researcher Conference Asia, University of Hong Kong', l: 'Talk', s: $elm$core$Maybe$Nothing, c: 'Coverage correlation: detecting singular dependencies between random variables'},
 		{
-		v: 'May 2025',
-		w: 'Workshop on uncertainty in multivariate, non-Euclidean, and functional spaces: theory and practice, Isaac Newton Institute, Cambridge',
-		p: 'Poster',
-		x: $elm$core$Maybe$Just(
+		n: 'May 2025',
+		o: 'Workshop on uncertainty in multivariate, non-Euclidean, and functional spaces: theory and practice, Isaac Newton Institute, Cambridge',
+		l: 'Poster',
+		s: $elm$core$Maybe$Just(
 			{f: 'Poster', h: 'assets/papers/coverage_poster.pdf'}),
-		e: 'The coverage correlation coefficient: Going beyond functional dependence'
+		c: 'The coverage correlation coefficient: Going beyond functional dependence'
 	},
-		{v: 'Apr 2025', w: 'Research Showcase Day, LSE', p: 'Talk', x: $elm$core$Maybe$Nothing, e: 'Coverage correlation coefficient'},
-		{v: 'Mar 2025', w: 'Data Science Society, LSE', p: 'Talk', x: $elm$core$Maybe$Nothing, e: 'Multivariate rank via optimal assignment'},
+		{n: 'Apr 2025', o: 'Research Showcase Day, LSE', l: 'Talk', s: $elm$core$Maybe$Nothing, c: 'Coverage correlation coefficient'},
+		{n: 'Mar 2025', o: 'Data Science Society, LSE', l: 'Talk', s: $elm$core$Maybe$Nothing, c: 'Multivariate rank via optimal assignment'},
 		{
-		v: 'Jul 2024',
-		w: 'Tengyao\'s group meeting, LSE',
-		p: 'Talk',
-		x: $elm$core$Maybe$Just(
+		n: 'Jul 2024',
+		o: 'Tengyao\'s group meeting, LSE',
+		l: 'Talk',
+		s: $elm$core$Maybe$Just(
 			{f: 'Notes', h: 'assets/papers/DM.pdf'}),
-		e: 'A brief introduction of diffusion model'
+		c: 'A brief introduction of diffusion model'
 	},
 		{
-		v: 'Jun 2024',
-		w: 'Workshop on heterogeneous and distributed data, University of Warwick',
-		p: 'Poster',
-		x: $elm$core$Maybe$Just(
+		n: 'Jun 2024',
+		o: 'Workshop on heterogeneous and distributed data, University of Warwick',
+		l: 'Poster',
+		s: $elm$core$Maybe$Just(
 			{f: 'Poster', h: 'assets/papers/yang24_poster.pdf'}),
-		e: 'Multiple-output composite quantile regression through an optimal transport lens'
+		c: 'Multiple-output composite quantile regression through an optimal transport lens'
 	},
-		{v: 'Jul 2023', w: 'School of Mathematics and Statistics, Northeast Normal University', p: 'Talk', x: $elm$core$Maybe$Nothing, e: 'Multiple-output composite quantile regression through an optimal transport lens'}
+		{n: 'Jul 2023', o: 'School of Mathematics and Statistics, Northeast Normal University', l: 'Talk', s: $elm$core$Maybe$Nothing, c: 'Multiple-output composite quantile regression through an optimal transport lens'}
 	]);
-var $author$project$Main$talksView = A2(
-	$elm$html$Html$section,
-	_List_fromArray(
-		[
-			$elm$html$Html$Attributes$class('content-section')
-		]),
-	_List_fromArray(
-		[
-			A2(
-			$elm$html$Html$div,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$class('section-heading')
-				]),
-			_List_fromArray(
-				[
-					A2(
-					$elm$html$Html$span,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('section-kicker')
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('Presentations')
-						])),
-					A2(
-					$elm$html$Html$h2,
-					_List_Nil,
-					_List_fromArray(
-						[
-							$elm$html$Html$text('Talks and Posters')
-						]))
-				])),
-			A2(
-			$elm$html$Html$div,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$class('timeline')
-				]),
-			A2($elm$core$List$map, $author$project$Main$talkView, $author$project$Main$talks))
-		]));
-var $elm$html$Html$li = _VirtualDom_node('li');
 var $elm$html$Html$ul = _VirtualDom_node('ul');
-var $author$project$Main$teachingView = A2(
+var $author$project$Main$talksView = A2(
 	$elm$html$Html$section,
 	_List_fromArray(
 		[
@@ -5793,38 +5689,21 @@ var $author$project$Main$teachingView = A2(
 	_List_fromArray(
 		[
 			A2(
-			$elm$html$Html$div,
+			$elm$html$Html$ul,
 			_List_fromArray(
 				[
-					$elm$html$Html$Attributes$class('section-heading')
+					$elm$html$Html$Attributes$class('talk-simple-list')
 				]),
-			_List_fromArray(
-				[
-					A2(
-					$elm$html$Html$span,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('section-kicker')
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('Teaching')
-						])),
-					A2(
-					$elm$html$Html$h2,
-					_List_Nil,
-					_List_fromArray(
-						[
-							$elm$html$Html$text('Courses')
-						])),
-					A2(
-					$elm$html$Html$p,
-					_List_Nil,
-					_List_fromArray(
-						[
-							$elm$html$Html$text('Graduate teaching assistant experience across statistics, graph learning, data analysis, and functional data analysis.')
-						]))
-				])),
+			A2($elm$core$List$map, $author$project$Main$talkListItem, $author$project$Main$talks))
+		]));
+var $author$project$Main$teachingView = A2(
+	$elm$html$Html$section,
+	_List_fromArray(
+		[
+			$elm$html$Html$Attributes$class('content-section teaching')
+		]),
+	_List_fromArray(
+		[
 			A2(
 			$elm$html$Html$h3,
 			_List_Nil,
@@ -5899,7 +5778,6 @@ var $author$project$Main$currentSection = function (section) {
 			return $author$project$Main$teachingView;
 	}
 };
-var $elm$html$Html$footer = _VirtualDom_node('footer');
 var $elm$html$Html$header = _VirtualDom_node('header');
 var $elm$html$Html$Attributes$id = $elm$html$Html$Attributes$stringProperty('id');
 var $elm$html$Html$main_ = _VirtualDom_node('main');
@@ -5929,18 +5807,40 @@ var $author$project$Main$navButton = F3(
 			_List_fromArray(
 				[
 					$elm$html$Html$Attributes$class(
-					_Utils_eq(model.K, section) ? 'nav-button is-active' : 'nav-button'),
-					$elm$html$Html$Events$onClick(section)
+					_Utils_eq(model.L, section) ? 'nav-button is-active' : 'nav-button'),
+					$elm$html$Html$Events$onClick(
+					$author$project$Main$Show(section))
 				]),
 			_List_fromArray(
 				[
 					$elm$html$Html$text(label)
 				]));
 	});
+var $author$project$Main$ToggleTheme = {$: 1};
+var $elm$html$Html$Attributes$title = $elm$html$Html$Attributes$stringProperty('title');
+var $author$project$Main$themeButton = function (darkMode) {
+	return A2(
+		$elm$html$Html$button,
+		_List_fromArray(
+			[
+				$elm$html$Html$Attributes$class('theme-toggle'),
+				$elm$html$Html$Events$onClick($author$project$Main$ToggleTheme),
+				$elm$html$Html$Attributes$title('Switch color mode')
+			]),
+		_List_fromArray(
+			[
+				$elm$html$Html$text(
+				darkMode ? '☀' : '☾')
+			]));
+};
 var $author$project$Main$view = function (model) {
 	return A2(
 		$elm$html$Html$div,
-		_List_Nil,
+		_List_fromArray(
+			[
+				$elm$html$Html$Attributes$class(
+				model.F ? 'app-shell theme-dark' : 'app-shell')
+			]),
 		_List_fromArray(
 			[
 				A2(
@@ -5966,7 +5866,8 @@ var $author$project$Main$view = function (model) {
 									[
 										$elm$html$Html$Attributes$class('brand'),
 										$elm$html$Html$Attributes$href('#top'),
-										$elm$html$Html$Events$onClick(0)
+										$elm$html$Html$Events$onClick(
+										$author$project$Main$Show(0))
 									]),
 								_List_fromArray(
 									[
@@ -5984,7 +5885,8 @@ var $author$project$Main$view = function (model) {
 										A3($author$project$Main$navButton, model, 1, 'Papers'),
 										A3($author$project$Main$navButton, model, 2, 'Talks'),
 										A3($author$project$Main$navButton, model, 3, 'Teaching')
-									]))
+									])),
+								$author$project$Main$themeButton(model.F)
 							]))
 					])),
 				A2(
@@ -5992,48 +5894,15 @@ var $author$project$Main$view = function (model) {
 				_List_Nil,
 				_List_fromArray(
 					[
-						$author$project$Main$currentSection(model.K)
-					])),
-				A2(
-				$elm$html$Html$footer,
-				_List_fromArray(
-					[
-						$elm$html$Html$Attributes$class('site-footer')
-					]),
-				_List_fromArray(
-					[
-						A2(
-						$elm$html$Html$span,
-						_List_Nil,
-						_List_fromArray(
-							[
-								$elm$html$Html$text('Xuzhi Yang')
-							])),
-						A2(
-						$elm$html$Html$span,
-						_List_Nil,
-						_List_fromArray(
-							[
-								$elm$html$Html$text('PhD in Statistics, LSE')
-							])),
-						A2(
-						$elm$html$Html$a,
-						_List_fromArray(
-							[
-								$elm$html$Html$Attributes$href('mailto:yangxuzhi3@gmail.com')
-							]),
-						_List_fromArray(
-							[
-								$elm$html$Html$text('yangxuzhi3@gmail.com')
-							]))
+						$author$project$Main$currentSection(model.L)
 					]))
 			]));
 };
 var $author$project$Main$main = $elm$browser$Browser$sandbox(
 	{
-		aD: {K: 0},
-		aK: $author$project$Main$update,
-		aL: $author$project$Main$view
+		aE: {F: false, L: 0},
+		aL: $author$project$Main$update,
+		aM: $author$project$Main$view
 	});
 _Platform_export({'Main':{'init':$author$project$Main$main(
 	$elm$json$Json$Decode$succeed(0))(0)}});}(this));

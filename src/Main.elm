@@ -156,11 +156,15 @@ homeView =
                     , text "."
                     ]
                 , p []
-                    [ text "My work is driven by methods that elegantly use "
-                    , strong [] [ text "rank" ]
-                    , text " and "
-                    , strong [] [ text "quantile" ]
-                    , text ", especially in nonparametric statistics, robust statistics, and uncertainty quantification."
+                    [ text "My research is theoretical in nature, aiming to understand the mathematical principles underlying statistics and machine learning. I develop theories and methods based on:"
+                    ]
+                , ul []
+                    [ li [] [ text "Optimal transport theory;" ]
+                    , li [] [ text "Statistics, e.g. nonparametric statistics and robust statistics;" ]
+                    , li [] [ text "Non-Euclidean geometry." ]
+                    ]
+                , p []
+                    [ text "Recently, I am also excited about developing reliable AI systems for mathematical proof verification by combining LLMs with formal languages such as Lean."
                     ]
                 , div [ class "quick-links" ]
                     [ a [ href "https://scholar.google.com/citations?user=XnH5giYAAAAJ&hl=en&oi=sra", target "_blank" ] [ text "Google Scholar" ]

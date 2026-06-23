@@ -5271,6 +5271,7 @@ var $elm$html$Html$Attributes$src = function (url) {
 		_VirtualDom_noJavaScriptOrHtmlUri(url));
 };
 var $elm$html$Html$Attributes$target = $elm$html$Html$Attributes$stringProperty('target');
+var $elm$html$Html$Attributes$title = $elm$html$Html$Attributes$stringProperty('title');
 var $elm$html$Html$ul = _VirtualDom_node('ul');
 var $author$project$Main$homeView = A2(
 	$elm$html$Html$div,
@@ -5289,18 +5290,48 @@ var $author$project$Main$homeView = A2(
 					$elm$html$Html$div,
 					_List_fromArray(
 						[
-							$elm$html$Html$Attributes$class('hero-media')
+							$elm$html$Html$Attributes$class('hero-identity')
 						]),
 					_List_fromArray(
 						[
 							A2(
-							$elm$html$Html$img,
+							$elm$html$Html$div,
 							_List_fromArray(
 								[
-									$elm$html$Html$Attributes$src('assets/me.jpg'),
-									$elm$html$Html$Attributes$alt('Portrait of Xuzhi Yang')
+									$elm$html$Html$Attributes$class('hero-media')
 								]),
-							_List_Nil)
+							_List_fromArray(
+								[
+									A2(
+									$elm$html$Html$img,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$src('assets/me.jpg'),
+											$elm$html$Html$Attributes$alt('Portrait of Xuzhi Yang')
+										]),
+									_List_Nil)
+								])),
+							A2(
+							$elm$html$Html$p,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('portrait-email')
+								]),
+							_List_fromArray(
+								[
+									A2(
+									$elm$html$Html$span,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$class('email-mark'),
+											$elm$html$Html$Attributes$title('Email')
+										]),
+									_List_fromArray(
+										[
+											$elm$html$Html$text('✉')
+										])),
+									$elm$html$Html$text('x.yang64 (at) lse.ac.uk')
+								]))
 						])),
 					A2(
 					$elm$html$Html$div,
@@ -5847,7 +5878,6 @@ var $author$project$Main$navButton = F3(
 				]));
 	});
 var $author$project$Main$ToggleTheme = {$: 1};
-var $elm$html$Html$Attributes$title = $elm$html$Html$Attributes$stringProperty('title');
 var $author$project$Main$themeButton = function (darkMode) {
 	return A2(
 		$elm$html$Html$button,

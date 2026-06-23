@@ -156,6 +156,10 @@ main {
   gap: 48px;
 }
 
+.hero-identity {
+  align-self: start;
+}
+
 .hero-media {
   border-radius: 8px;
   overflow: hidden;
@@ -196,6 +200,24 @@ h3 {
 
 .hero-copy strong {
   color: var(--rose);
+}
+
+.portrait-email {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.email-mark {
+  display: inline-block;
+  margin-right: 8px;
+  color: var(--blue);
+  font-size: 1.45em;
+  line-height: 1;
+  vertical-align: -0.12em;
 }
 
 .quick-links,

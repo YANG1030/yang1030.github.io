@@ -145,8 +145,14 @@ homeView : Html Msg
 homeView =
     div []
         [ section [ class "hero" ]
-            [ div [ class "hero-media" ]
-                [ img [ src "assets/me.jpg", alt "Portrait of Xuzhi Yang" ] [] ]
+            [ div [ class "hero-identity" ]
+                [ div [ class "hero-media" ]
+                    [ img [ src "assets/me.jpg", alt "Portrait of Xuzhi Yang" ] [] ]
+                , p [ class "portrait-email" ]
+                    [ span [ class "email-mark", title "Email" ] [ text "✉" ]
+                    , text "x.yang64 (at) lse.ac.uk"
+                    ]
+                ]
             , div [ class "hero-copy" ]
                 [ p [ class "lead" ]
                     [ text "I obtained my PhD in Statistics from the London School of Economics and Political Science, supervised by "
